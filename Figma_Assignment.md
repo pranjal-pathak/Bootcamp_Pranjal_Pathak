@@ -8,4 +8,6 @@
 
 [Exercise-7](https://www.figma.com/file/xwUQIoBrDhJ4MIzPQ2oXHc/Exercise-7?type=design&node-id=1%3A2&mode=design&t=OTmulhXxFO0tmZsn-1)
 
+[Exercise- 8](https://www.figma.com/file/JOwUCqKX4oV68AdvZuwos8/Untitled?type=design&node-id=0%3A1&mode=design&t=Nk1P88I86D47Tgie-1)
+
 [Exercise - 12 (Landing Page)](https://www.figma.com/file/Bvu8UDXsuOAk8KH90qvBc7/Dariyaganj?type=design&node-id=0%3A1&mode=design&t=7TYHVnJycmKKjarW-1)
