@@ -1,6 +1,6 @@
 [Exercise-1](https://www.figma.com/file/PM8Y0tx03eUYQHkpwdY1hv/Exercise-1?type=design&node-id=0%3A1&mode=design&t=j4O5OwAAdhWJdG2Z-1)
 
-[Exercise-2](http0://www.figma.com/file/P4tKej0mn1gD8no2g4V1Nz/Exercise-2?type=design&node-id=0%3A1&mode=design&t=LdQ6qucHdSlAmSIx-1)
+[Exercise-2](https://www.figma.com/file/P4tKej0mn1gD8no2g4V1Nz/Exercise-2?type=design&node-id=0%3A1&mode=design&t=mp5aSTRXAFeokAYv-1)
 
 [Exercise-3](https://www.figma.com/file/kOpLLhA3QEVz8RPppe9UAX/Exercise-3?type=design&node-id=0%3A1&mode=design&t=fBLJDKhTnfPHjP4t-1)
 
