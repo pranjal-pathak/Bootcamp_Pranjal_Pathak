@@ -1,0 +1,5 @@
+[https://www.apple.com/in/iphone-15/]
+[https://www.kantoaudio.com/powered-speakers/yu6/]
+[https://www.notion.so/]
+[https://pitchfork.com/features/]
+[https://superhuman.com/]
