@@ -1,0 +1,9 @@
+.important {
+  color: #ff0000;
+  /* Red text color for elements with the class "important" */
+}
+
+.urgent {
+  background-color: #ffff00;
+  /* Yellow background color for elements with the class "urgent" */
+}
