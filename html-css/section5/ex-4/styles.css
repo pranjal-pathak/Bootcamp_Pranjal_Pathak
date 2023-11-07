@@ -1,0 +1,18 @@
+/* styles.css */
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.content {
+    flex: 100%; /* Takes up the remaining space */
+    padding: 20px;
+    border: 1px solid #ddd;
+}

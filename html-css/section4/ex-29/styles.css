@@ -1,0 +1,16 @@
+  .shop-button {
+            padding: 5px 20px; /* 5px padding top/bottom, 20px padding left/right */
+
+            background-color: #ffcccc; /* Elegant background color */
+
+            border: none;
+            border-radius: 5px;
+            font-family: cursive;
+            font-size: 18px;
+            color: #333; /* Text color */
+
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }

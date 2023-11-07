@@ -1,0 +1,7 @@
+.container {
+  text-align: center; /* Center-align the content horizontally */
+}
+
+button {
+  margin: 0 auto; /* Center the button horizontally using margin */
+}

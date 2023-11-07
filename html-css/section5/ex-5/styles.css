@@ -1,0 +1,33 @@
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+.login-form {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    
+    
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto; /* Center the form within the container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+label, input, button {
+    display: block;
+    margin-bottom: 10px;
+    
+}

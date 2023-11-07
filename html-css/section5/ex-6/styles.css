@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(36, 36, 36);
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Add spacing between images */
+    max-width: 800px; /* Set a maximum width to control wrapping */
+    margin: 0 auto; /* Center the gallery within its container */
+}
+
+.image {
+    flex: 0 0 calc(33.33% - 10px); /* Fixed width for each image with spacing */
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}

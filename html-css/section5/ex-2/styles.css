@@ -1,0 +1,17 @@
+/* styles.css */
+
+.container {
+    display: flex;
+}
+
+#first-column {
+    flex: 2; 
+    background-color: red;
+}
+
+.column {
+    background-color: blue;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+}

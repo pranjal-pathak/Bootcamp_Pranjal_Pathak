@@ -1,0 +1,22 @@
+ .column {
+            display: inline-block;
+            vertical-align: top;
+            height: 200px;
+        }
+
+        .left-column {
+            width: 30%;
+            background-color: #ffcc00;
+            margin-right: 20px;
+        }
+
+        .middle-column {
+            width: 30%;
+            background-color: #66cc66;
+            margin: 0 10px;
+        }
+
+        .right-column {
+            width: 30%;
+            background-color: #3399cc;
+        }
