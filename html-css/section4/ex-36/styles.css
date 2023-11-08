@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+header {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.column {
+  width: 33.33%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.col1{
+background-image: url('https://img.freepik.com/free-photo/black-woman-trendy-grey-leather-jacket-posing-beige-background-studio-winter-autumn-fashion-look_273443-141.jpg');
+color: white;
+}
+.col2{
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO0BquZAkKBZE4uCndU7rIFBTUjey8i7pJrA&usqp=CAU');
+color: white;
+}
+.col3{
+    background-image: url('https://wallpapers.com/images/featured/lifestyle-pictures-nnnh8pmtgd1p29tq.jpg');
+    color: white;
+
+}
+
+h1, h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 10px 0;
+}

@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 120px;
+  margin: 10px;
+  text-align: center;
+}
+
+.thumbnail img {
+  max-width: 100%;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.thumbnail p {
+  margin: 5px 0;
+  font-weight: bold;
+}

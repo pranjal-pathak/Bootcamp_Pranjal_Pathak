@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.quote-box {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border: 2px solid #3498db; /* 2px solid border in a color that stands out */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote-box p {
+  font-size: 18px;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
