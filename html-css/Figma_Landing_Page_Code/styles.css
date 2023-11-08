@@ -1,13 +1,19 @@
-.body{
-    background-color: #F4F2E6;
+* {
+  background-color: #f4f2e6;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-.margin{
-    margin-left: 8%;
-    margin-right: 8%;
+.margin {
+  margin-left: 8%;
+  margin-right: 8%;
 }
-.no-margin{
-    margin-left: 0%;
-    margin-right: 0%;
+.no-margin {
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.no-padding {
+  padding: 0;
 }
 .resizable-image {
   width: 100%; /* Set the width to 100% to make the image responsive */
@@ -15,84 +21,114 @@
   height: auto; /* Let the height adjust to maintain the aspect ratio */
 }
 
-.logo{
-    display: flex;
-    justify-content: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f2e6;
+  color: #6e011e;
+  padding: 20px;
 }
-.dotted-line{
-    margin-top: 4%;
-    border: 1px rgb(84, 81, 81) dashed;
+
+.logo {
+  flex: 1;
+  text-align: center;
 }
-.header{
-    width: 84%;
-    margin-top: 4%;
-    display: flex;
-    align-items: center;
-    
-     
+
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
-.link-container{
-    width: 84%;
-    display: flex;
-    flex-wrap: wrap;  
+
+.links {
+  flex: 2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
-a{
-    margin-right: 3%;
-    text-decoration: none;
-    color: #6E011E;
-    font-weight: bold;
-    font-size: large;
+
+.links a {
+  color: #6e011e;
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bold;
+  font-size: large;
+  font-family: "Roboto-Slab";
 }
-.button-container{
-    width: 42%;
-    display: flex;
-    
+
+.actions {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.btn{
-    margin-right: 3%;
-    background-color: #67021E;
-    color: white;
-    font-weight:bolder;
-    padding: 5%;
-    font-size: large;
+
+.actions button {
+  background-color: #6e011e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: "Roboto-Slab";
 }
-.solid-line{
-    margin-top: 4%;
-    border: 1px rgb(178, 159, 159) solid;
+
+.text {
+  font-size: clamp(10px, 5vw, 16px);
 }
-.heading-collection
-{
-    display: flex;
+
+@media screen and (max-width: 768px) {
+  .header {
     flex-direction: column;
     align-items: center;
-   
-}
-.heading{
-    margin-top: 4%;
-    display: flex;
     justify-content: center;
-    font-size: xx-large;
-    font-family: 'Roboto Slab';
-    color:#67021E;
-    text-align: center;
+  }
+  .links,
+  .actions {
+    width: 100%;
+  }
 }
-.sub-heading{
-    margin-top: 4%;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.dotted-line {
+  margin-top: 1%;
+  border: 1px rgb(84, 81, 81) dashed;
 }
-.text{
-    margin-left: 3%;
-    margin-right: 3%;
-    color: #67021E;
-    text-align: center;
-}
-.border-image{
-    width: 84%;
-    margin-top: 4%;
 
+.solid-line {
+  margin-top: 4%;
+  border: 1px rgb(178, 159, 159) solid;
+}
+.heading-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-family: "Roboto Slab";
+  color: #67021e;
+  text-align: center;
+}
+.sub-heading {
+  margin-top: 4%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  margin-left: 3%;
+  margin-right: 3%;
+  color: #67021e;
+  text-align: center;
+}
+.border-image {
+  width: 84%;
+  margin-top: 4%;
 }
 
 .container {
@@ -109,7 +145,7 @@ a{
   margin: 10px;
   text-align: left;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   /* Add a minimum height to the box for vertical alignment */
@@ -123,12 +159,26 @@ a{
 .centered-image {
   max-width: 100%;
   height: auto;
-  font-style: 'Lato';
+  font-style: "Lato";
+}
+.box2 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: first baseline; */
+  justify-content: end;
+  align-items: center;
+  
 }
 
 .centered-text {
+  display: flex;
+  align-items: flex-start;
   text-align: left;
-  font-style: 'Lato';
+  font-style: "Lato";
+  font-size: larger;
+  text-align: justify;
+  
+  
 }
 
 .double-images {
@@ -139,21 +189,25 @@ a{
 }
 
 .double-images img {
+
   max-width: 100%;
   height: auto;
-  margin: 10px ;
+  margin: 10px;
+  
 }
 
 .read-more-button {
-  background-color: #F4F2E6;
-  color: black;
+  background-color: #f4f2e6;
+  color:#333;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
-  border:1px black solid;
-  font-style: 'Lato';
+  border: 1px black solid;
+  font-style: "Lato";
   font-weight: bold;
+  font-size: large;
+  display: flex;
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -165,6 +219,7 @@ a{
 .about-the-dishes {
   display: flex;
   justify-content: space-between;
+  align-items: top;
   flex-wrap: wrap;
   margin-top: 4%;
 }
@@ -193,13 +248,18 @@ a{
   justify-content: center;
   text-align: center;
   padding: 20px;
+  
+}
+.img-2 {
+  flex: 2;
+  padding-bottom: 0;
+  flex-grow:initial;
 }
 
-
-.bold-red-text{
-    color: #65051E;
-    font-size: x-large;
-    font-weight: bolder;
+.bold-red-text {
+  color: #65051e;
+  font-size: x-large;
+  font-weight: bolder;
 }
 
 @media (max-width: 768px) {
@@ -208,33 +268,36 @@ a{
   }
 }
 .menu {
-    margin-top: 4%;
+  margin-top: 4%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.menu-box{
-
-
-  flex: 1;
-  padding: 20px;
+.menu-box {
+  flex: 0.5;
+  padding: 0px 20px 20px 20px;
   margin: 10px;
   text-align: left;
-
+  font-family: "Lato";
+  font-size: larger;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
 }
-
-
-
 
 h2 {
   font-size: 24px;
-  color: #67021E;
-  
+  color: #67021e;
+  margin-bottom: 20px;
+}
+.menu-box p {
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 button {
-    margin-top: 4%;
-  background-color: #F4F2E6;
+  margin-top: 4%;
+  background-color: #f4f2e6;
   color: black;
   border: 1px black solid;
   padding: 10px 20px;
@@ -246,18 +309,19 @@ button {
     flex-direction: column;
   }
 }
-.button-container{
-    text-align: left;
+.button-container {
+  text-align: left;
 }
 .footer {
-  font-style: 'Lato';
-  margin-top: 4%;
+  font-style: "Lato";
+  margin-top: 0%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  background-color: #F4F2E6;
+  background-color: #f4f2e6;
   color: black;
   padding: 20px;
+  align-items: flex-start;
 }
 
 .box {
@@ -274,31 +338,56 @@ button {
 .centered-image {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
-ul.footer-icons {
-  list-style: none;
+
+.location p {
+  font-style: "lato";
+  font-size: large;
+  line-height: 30px;
+  color: #222121;
+}
+.location .heading{
+  color: #65051e;
+  font-size: larger;
+  font-style: 'Lato';
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+  margin-left: 10px;
   padding: 0;
-  text-align: center;
 }
-
-ul.footer-icons li {
-  margin: 5px 0;
-}
-
-.fa {
-  margin-right: 5px;
-}
-
 @media (max-width: 768px) {
+  body {
+    margin: 10px; /* Adjust the size of the gap as needed */
+  }
   .footer {
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .image-footer {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+  }
+  .icons {
+    flex: 0.5;
+    margin: 0;
+    padding: 0;
+  }
+  .location {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: justify;
+    align-items: center;
   }
 }
-

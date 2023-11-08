@@ -1,0 +1,57 @@
+body{
+    height: 100vh;
+}
+.photo-gallery {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.photo {
+    background-image: url('placeholder.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.photo1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.photo2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.photo3 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.photo4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.photo5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.photo6 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+}

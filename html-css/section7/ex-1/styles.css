@@ -1,83 +1,69 @@
-/* Reset some default styles for better consistency */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-}
-
-.menu li {
+*{
+    margin-left: 20px;
     margin-right: 20px;
 }
 
-.menu a {
-    text-decoration: none;
-    color: #fff;
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem 1.5rem;
+   box-shadow: 2px 3px 2px #f1f1f1;
 }
 
-/* Main content styles */
-main {
-    display: flex;
+.logo {
+   font-size: 2rem;
+   font-weight: 500;
 }
 
-.sidebar {
-    width: 20%;
-    padding: 20px;
-    background-color: #eee;
+ul {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-decoration: none;
+}
+.container {
+ display: grid;
+ grid-template-columns: 1fr 3fr;
+ gap: 20px;
+}
+.nav-item {
+   margin-left: 2rem;
+   text-decoration: none;
 }
 
-.product-gallery {
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.nav-link {
+   font-weight: var(--bold-font);
+   text-decoration: none;
 }
-
 .product {
-    width: 45%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+    margin-top: 20px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1rem;
+}
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.product img {
-    max-width: 100%;
+aside label {
+  display: block;
+  margin-bottom: 10px;
 }
 
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+.menu{
+    text-decoration: none;
 }
-.our-presence{
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.foo{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-end;
 }
