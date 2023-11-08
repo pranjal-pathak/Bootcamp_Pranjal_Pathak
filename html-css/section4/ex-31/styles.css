@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 20px 0;
+}
+
+.menu {
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.dish {
+  margin-bottom: 30px;
+}
+
+.dish img {
+  max-width: 100%;
+  border: 2px solid #000;
+  border-radius: 8px;
+}
+
+.dish h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.dish p {
+  font-size: 16px;
+  margin: 10px 0;
+}
