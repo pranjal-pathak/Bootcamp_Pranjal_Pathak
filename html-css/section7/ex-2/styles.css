@@ -1,4 +1,5 @@
 body {
+  margin-top: 0;
   margin-left: 20%;
   margin-right: 20%;
   background-color: rgb(204, 204, 204);
@@ -13,9 +14,8 @@ body {
   text-align: right;
 }
 
-.title img{
+.title img {
   max-width: 104.5%;
-
 }
 .heading {
   display: flex;
@@ -24,7 +24,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 8px;
 }
-.resizeable-image{
+.resizeable-image {
   max-width: 80%;
 }
 .link-container {
@@ -46,11 +46,11 @@ body {
   width: 104%;
   display: flex;
 }
-.three-links{
+.three-links {
   display: flex;
   justify-content: space-between;
 }
-.three-link{
+.three-link {
   margin-right: 10px;
 }
 
@@ -90,10 +90,9 @@ body {
 .sub-division {
   margin-bottom: 20px;
 }
-.sub-division-top{
-    display: flex;
-    justify-content: space-between;
-    
+.sub-division-top {
+  display: flex;
+  justify-content: space-between;
 }
 
 .quick-links {
@@ -101,7 +100,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.quick-links label{
+.quick-links label {
   font-size: small;
 }
 
@@ -143,17 +142,17 @@ body {
   font-size: 12px;
   color: white;
 }
-.last{
+.last {
   margin-top: 20px;
   font-size: small;
   display: flex;
   justify-content: flex-end;
 }
-.last-para{
+.last-para {
   display: flex;
   justify-content: flex-end;
 }
-.footer{
+.footer {
   margin-top: 20px;
   font-size: small;
   display: flex;
@@ -161,21 +160,19 @@ body {
   text-align: center;
   color: rgb(32, 31, 31);
 }
-.icons{
+.icons {
   margin-top: 10px;
   display: flex;
   justify-content: end;
   font-size: small;
   margin-right: 10px;
-
 }
-.icons a{
+.icons a {
   font-size: small;
   text-decoration: none;
-  color:rgb(32, 31, 31);
+  color: rgb(32, 31, 31);
   margin-right: 10px;
-
 }
-.icons img{
+.icons img {
   margin-right: 10px;
 }
