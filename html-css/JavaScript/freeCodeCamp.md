@@ -1,0 +1,6 @@
+![Basic JS](<Screenshot 2023-11-13 at 1.09.26 PM.png>)
+![ES6](<Screenshot 2023-11-13 at 1.09.39 PM.png>)
+![Regular Expressions](<Screenshot 2023-11-13 at 1.09.50 PM.png>)
+![Basic Data Structures](<Screenshot 2023-11-13 at 1.10.08 PM.png>)
+![Basic Algorithm SCripting](<Screenshot 2023-11-13 at 1.10.08 PM-1.png>)
+![Object Oriented Programming](<Screenshot 2023-11-13 at 1.10.35 PM.png>)
