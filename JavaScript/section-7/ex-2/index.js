@@ -32,9 +32,21 @@ class Chessboard {
     ];
   }
 
+  // printBoard() {
+  //   this.board.forEach((row) => {
+  //     console.log(row.map((piece) => this.symbols[piece] || piece).join(" "));
+  //   });
+  //   console.log("\n");
+  // }
+
   printBoard() {
-    this.board.forEach((row) => {
-      console.log(row.map((piece) => this.symbols[piece] || piece).join(" "));
+  
+    this.board.forEach((row, index) => {
+      const rowString = row
+        .map((piece) => this.symbols[piece] || piece)
+        .join(" | ");
+      console.log(`${8 - index}| ${rowString} |`);
+      console.log(" |--------------------------------|");
     });
     console.log("\n");
   }
