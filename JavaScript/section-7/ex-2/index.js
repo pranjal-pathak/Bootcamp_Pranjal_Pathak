@@ -39,15 +39,35 @@ class Chessboard {
   //   console.log("\n");
   // }
 
+  // printBoard() {
+
+  //   this.board.forEach((row, index) => {
+  //     const rowString = row
+  //       .map((piece) => this.symbols[piece] || piece)
+  //       .join(" | ");
+  //     console.log(` ${rowString} |`);
+  //     console.log(" |--------------------------------|");
+  //   });
+  //   console.log("\n");
+  // }
   printBoard() {
-  
-    this.board.forEach((row, index) => {
+    const horizontalSeparator = "+---+---+---+---+---+---+---+---+";
+
+    console.log("   a   b   c   d   e   f   g   h");
+    console.log(horizontalSeparator);
+
+    for (let i = 0; i < this.board.length; i++) {
+      const row = this.board[i];
       const rowString = row
-        .map((piece) => this.symbols[piece] || piece)
-        .join(" | ");
-      console.log(`${8 - index}| ${rowString} |`);
-      console.log(" |--------------------------------|");
-    });
+        .map((piece) => ` ${this.symbols[piece] || piece} `)
+        .join("|");
+      const rowWithSeparator = ` ${8 - i} |${rowString} |`;
+
+      console.log(horizontalSeparator);
+      console.log(rowWithSeparator);
+    }
+
+    console.log(horizontalSeparator);
     console.log("\n");
   }
 
