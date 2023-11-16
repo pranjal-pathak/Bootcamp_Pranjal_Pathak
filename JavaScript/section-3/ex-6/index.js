@@ -1,5 +1,5 @@
 const sortNumbers = (numbers, compareFn) =>{
-    return numbers.slice().sort(compareFn);
+    return numbers.sort(compareFn);
 }
 const numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
 

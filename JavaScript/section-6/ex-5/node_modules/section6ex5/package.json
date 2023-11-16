@@ -1,0 +1,19 @@
+{
+  "name": "section6ex5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjal-pathak/sec6ex5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranjal-pathak/sec6ex5/issues"
+  },
+  "homepage": "https://github.com/pranjal-pathak/sec6ex5#readme"
+}

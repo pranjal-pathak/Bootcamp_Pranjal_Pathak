@@ -1,7 +1,5 @@
 const composeWithReduce = (functions) => {
-  return functions.reduce((accumulator, currentFunction) => {
-    return (...args) => currentFunction(accumulator(...args));
-  });
+  return (x) => functions.reduce((result, func) => func(result),x)
 };
 
 // Example usage:

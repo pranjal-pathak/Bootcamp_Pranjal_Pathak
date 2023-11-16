@@ -1,8 +1,10 @@
-const filterAndMap = (numbers, filterFn,mapFn) =>{
-    const filteredNumbers = numbers.filter(filterFn);
-    const mappedNumbers = filteredNumbers.map(mapFn);
-    return mappedNumbers;
-}
+// const filterAndMap = (numbers, filterFn,mapFn) =>{
+//     const filteredNumbers = numbers.filter(filterFn);
+//     const mappedNumbers = filteredNumbers.map(mapFn);
+//     return mappedNumbers;
+// }
+
+const filterAndMap = (numbers,filterFn, mapFn) => numbers.filter(filterFn).map(mapFn);
 
 const isOdd = number => number%2!==0;
 const square = number => number*number;
