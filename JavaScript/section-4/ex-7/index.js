@@ -1,4 +1,3 @@
-// Modify the Library class to have a catalog that maps topics to arrays of books. Use composition to include a Catalog class within the Library.
 
 // Catalog class
 class Catalog {

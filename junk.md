@@ -6,3 +6,5 @@ revise
 watch video for higher order function
 promis.all
 curry function advantage
+
+

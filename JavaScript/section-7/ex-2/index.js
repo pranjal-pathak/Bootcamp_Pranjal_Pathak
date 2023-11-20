@@ -32,24 +32,6 @@ class Chessboard {
     ];
   }
 
-  // printBoard() {
-  //   this.board.forEach((row) => {
-  //     console.log(row.map((piece) => this.symbols[piece] || piece).join(" "));
-  //   });
-  //   console.log("\n");
-  // }
-
-  // printBoard() {
-
-  //   this.board.forEach((row, index) => {
-  //     const rowString = row
-  //       .map((piece) => this.symbols[piece] || piece)
-  //       .join(" | ");
-  //     console.log(` ${rowString} |`);
-  //     console.log(" |--------------------------------|");
-  //   });
-  //   console.log("\n");
-  // }
   printBoard() {
     const horizontalSeparator = "+---+---+---+---+---+---+---+---+";
 

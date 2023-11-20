@@ -18,6 +18,6 @@ console.log("Age:", age);
 
 // Logging each address in the addresses array
 console.log("Addresses:");
-addresses.forEach((address, index) => {
+addresses.map((address, index) => {
   console.log(`  ${index + 1}. ${address}`);
 });
