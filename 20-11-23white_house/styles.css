@@ -1,18 +1,24 @@
-
+*{margin: 0;
+padding: 0;}
 body{
-    margin: 10px;
-    padding: 0;
+    margin: 0;
+    padding-top: 0;
     box-sizing: border-box;
     font-size: clamp(10px, 5vw, 16px);
 }
 .header{
-    margin-top: 10px;
+    margin-top: 0px;
     padding: 0%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding:0px 20px;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    width: 100vw;
+    margin-bottom: 100px;
 }
 
 .logo{
@@ -64,7 +70,7 @@ body{
     margin-right: 10px;
 }
 .below-header{
-    margin-top: 50px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -164,6 +170,13 @@ body{
     display: flex;
     justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  .box2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 .sec1
 {
     padding: 10px;
@@ -197,6 +210,7 @@ body{
 }
 .form label{
     border-radius: 20px;
+    font-size: 12px;
 }
 .email{
     display: flex;
@@ -204,7 +218,7 @@ body{
     margin-right: 5px;
 }
 #email{
-    max-width: 200px;
+    max-width: 100px;
     height: 20px;
     border-radius: 20px;
     border: 1px solid #0a2458;
@@ -217,7 +231,7 @@ body{
     margin-right: 5px;
 }
 #zip{
-    max-width: 200px;
+    max-width: 100px;
     height: 20px;
     border-radius: 20px;
     border: 1px solid #0a2458;
