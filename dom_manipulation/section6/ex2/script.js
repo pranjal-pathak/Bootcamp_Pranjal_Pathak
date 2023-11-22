@@ -1,43 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const gridContainer = document.querySelector("#grid-container");
+document.addEventListener("DOMContentLoaded", async function () {
+  const countriesContainer = document.getElementById("countries-container");
 
-  let obj = {};
-  async function fetchCountries() {
-    try {
-      const response = await fetch("https://restcountries.com/v2/all");
-      const data = await response.json();
+  // Fetch data from REST Countries API
+  const response = await fetch("https://restcountries.com/v3.1/all");
+  const countriesData = await response.json();
 
-      data.forEach((country) => {
-        const name = country.name;
-        const flag = country.flags.svg;
+  // Take the first 50 countries (or less if there are fewer than 50)
+  const countries = countriesData.slice(0, 50);
 
-        obj[name] = flag;
-      });
+  // Populate the countries on the webpage
+  countries.forEach((country) => {
+    const countryCard = document.createElement("div");
+    countryCard.classList.add("country-card");
 
-      processCountries(obj);
-    } catch (error) {
-      console.log("Error fetching data", error);
-    }
-  }
+    const countryName = document.createElement("div");
+    countryName.textContent = country.name.common;
+    countryCard.appendChild(countryName);
 
-  function processCountries(obj) {
-    for (let key in obj) {
-      const country = document.createElement("div");
-      country.classList.add("country");
-      const img = document.createElement("img");
-      const name = document.createElement("h3");
+    const countryFlag = document.createElement("img");
+    countryFlag.src = country.flags.png; // Use the flag URL from the API response
+    countryFlag.alt = `${country.name.common} Flag`;
+    countryCard.appendChild(countryFlag);
 
-      img.src = obj[key];
-      img.alt = key;
-      // console.log(key);
-      name.textContent = key;
-      country.appendChild(img);
-      country.appendChild(name);
-      // console.log('this',key)
-      gridContainer.appendChild(country);
-    }
-  }
-
-  console.log(obj);
-  fetchCountries();
+    countriesContainer.appendChild(countryCard);
+  });
 });
