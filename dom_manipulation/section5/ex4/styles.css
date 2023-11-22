@@ -10,7 +10,6 @@ body {
     width: 100%;
     height: 5px;
     background-color: #f0f0f0;
-    display: none; /* Initially hide the progress bar */
 }
 
 #progress-bar {
