@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collapsible Content Sections</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="collapsible-section" data-content-id="section1Content">
+  <div class="section-header" onclick="toggleSection('section1Content')">Section 1</div>
+  <div class="section-content" id="section1Content">
+    <p>This is the content of Section 1.</p>
+  </div>
+</div>
+
+<div class="collapsible-section" data-content-id="section2Content">
+  <div class="section-header" onclick="toggleSection('section2Content')">Section 2</div>
+  <div class="section-content" id="section2Content">
+    <p>This is the content of Section 2.</p>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

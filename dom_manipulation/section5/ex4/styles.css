@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #f0f0f0;
+    display: none; /* Initially hide the progress bar */
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #4caf50; /* Green color for the progress bar */
+}

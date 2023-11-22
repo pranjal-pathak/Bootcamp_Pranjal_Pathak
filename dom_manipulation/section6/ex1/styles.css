@@ -1,0 +1,34 @@
+body {
+            height: 100vh;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 2rem;
+        }
+        
+        .number-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+            gap: 10px;
+            /* background-color: grey; */
+            height: 100%;
+        }
+
+        .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #332;
+        }
+
+        .even {
+            background-color: greenyellow;
+        }
+
+        .odd {  
+            background-color: yellow;
+        }
+
+        .prime {
+            background-color: lightcoral;
+        }
