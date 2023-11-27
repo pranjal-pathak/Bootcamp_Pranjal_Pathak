@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribution on the basis of Study Type</title>
+    <link rel="stylesheet" href="study_type.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="title">
+            <h1>Distribution on the basis of Study Type</h1>
+        </div>
+    </div>
+</header>
+<hr />
+
+<!-- Loading Animation Container -->
+<div class="loading-container">
+    <div class="loading-circle"></div>
+</div>
+
+<section class="chart-section">
+    <div class="container">
+        <canvas id="studyTypeChart" width="400" height="400"></canvas>
+    </div>
+</section>
+
+<section class="summary-section">
+    <div class="container">
+        <p>
+            The bar graph illustrates the distribution of data based on study types - Observational and Clinical.
+            It provides insights into the number of researches conducted in each category.
+        </p>
+    </div>
+    <div class="connect-button-container">
+        <a href="index.html" class="connect-button">Back to Home</a>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Display loading animation
+        showLoadingAnimation();
+
+        // Fetch data from the provided API
+        setTimeout(() => {
+        fetch("biopharma.json")
+            .then((response) => response.json())
+            .then((data) => {
+                // Populate and display the bar graph
+                hideLoadingAnimation();
+                populateAndDisplayChart(data);
+            });
+        },1500);
+
+        function showLoadingAnimation() {
+            // Add a class to the loading container to make it visible
+            const loadingContainer = document.querySelector(".loading-container");
+            loadingContainer.classList.add("visible");
+        }
+
+        function hideLoadingAnimation() {
+            // Remove the class to hide the loading container
+            const loadingContainer = document.querySelector(".loading-container");
+            loadingContainer.classList.remove("visible");
+        }
+
+        function populateAndDisplayChart(data) {
+            const studyTypes = {
+                Observational: 0,
+                Clinical: 0
+            };
+
+            data.forEach((item) => {
+                const studyType = item.study_type;
+                if (studyTypes.hasOwnProperty(studyType)) {
+                    studyTypes[studyType]++;
+                }
+            });
+
+            const chartData = {
+                labels: Object.keys(studyTypes),
+                datasets: [
+                    {
+                        label: "Number of Researches",
+                        data: Object.values(studyTypes),
+                        backgroundColor: [
+                            "#FF3333",
+                            "#FF6666",
+                        ],
+                        borderWidth: 1
+                    },
+                ],
+            };
+
+            const chartOptions = {
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+            };
+
+            const ctx = document.getElementById("studyTypeChart").getContext("2d");
+            const myBarChart = new Chart(ctx, {
+                type: "bar",
+                data: chartData,
+                options: chartOptions,
+            });
+        }
+    });
+</script>
+</body>
+</html>

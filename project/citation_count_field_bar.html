@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Citation Count by Research Area</title>
+    <link rel="stylesheet" href="citaion_count_bar_graph_styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="title">
+          <h1>Citation Count by Research Area</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+    <!-- Loading Animation Container -->
+    <div class="loading-container">
+      <div class="loading-circle"></div>
+    </div>
+
+    <section class="chart-section">
+      <div class="container">
+        <canvas id="citationChart" width="800" height="400"></canvas>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="container">
+        <p>
+          The bar graph illustrates the total citation count in three research
+          areas: Molecular Biology, Drug Development, and Genetics. It provides
+          insights into the varying degrees of research activity and impact in
+          each area.
+        </p>
+      </div>
+      <div class="connect-button-container">
+        <a href="index.html" class="connect-button">Back to Home</a>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Display loading animation
+        showLoadingAnimation();
+
+        // Fetch data from the provided API
+        setTimeout(() => {
+        fetch("biopharma.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Populate and display the bar graph
+            hideLoadingAnimation();
+            populateAndDisplayChart(data);
+          });
+        },1500);
+
+        function showLoadingAnimation() {
+          // Add a class to the loading container to make it visible
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.add("visible");
+        }
+
+        function hideLoadingAnimation() {
+          // Remove the class to hide the loading container
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.remove("visible");
+        }
+
+        function populateAndDisplayChart(data) {
+          const researchAreas = {
+            "Molecular Biology": 0,
+            "Drug Development": 0,
+            Genetics: 0,
+          };
+
+          data.forEach((item) => {
+            const researchArea = item.research_area;
+            researchAreas[researchArea] += parseInt(item.citation_count, 10);
+          });
+
+          const chartData = {
+            labels: Object.keys(researchAreas),
+            datasets: [
+              {
+                label: "Citation Count",
+                data: Object.values(researchAreas),
+                backgroundColor: [
+                  "#FF3333",
+                  "#FF6666",
+                  "#FF9999",
+                  // Add more colors if needed
+                ],
+              },
+            ],
+          };
+
+          const chartOptions = {
+            responsive: true,
+            scales: {
+              x: {
+                beginAtZero: true,
+              },
+              y: {
+                beginAtZero: true,
+              },
+            },
+          };
+
+          const ctx = document.getElementById("citationChart").getContext("2d");
+          const myBarChart = new Chart(ctx, {
+            type: "bar",
+            data: chartData,
+            options: chartOptions,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

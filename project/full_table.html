@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribution on the basis of Study Type</title>
+    <link rel="stylesheet" href="full_table.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="title">
+            <h1>Detailed View Of Tablular Data</h1>
+        </div>
+    </div>
+</header>
+<hr />
+
+<!-- Loading Animation Container -->
+
+<div class="filter-controls">
+    <label for="yearFilter">Publication Year:</label>
+   <input type="number" id="yearFilter" min="1970" max="2023" placeholder="Enter a year between 1970 and 2023" />
+
+    <label for="diseaseFilter">Disease Focused:</label>
+    <select id="diseaseFilter">
+        <option value="">All</option>
+        <option value="Cancer">Cancer</option>
+        <option value="HIV">HIV</option>
+        <option value="Parkinson's Disease">Parkinson's Disease</option>
+        <option value="Cardiovascular Diseases">Cardiovascular Diseases</option>
+        <option value="Alzheimer's Disease">Alzheimer's Disease</option>
+    </select>
+
+    <label for="areaFilter">Research Area:</label>
+    <select id="areaFilter">
+        <option value="">All</option>
+        <option value="Molecular Biology">Molecular Biology</option>
+        <option value="Drug Development">Drug Development</option>
+        <option value="Genetics">Genetics</option>
+    </select>
+
+    <button onclick="applyFilters()">Apply Filters</button>
+    <button onclick="resetFilters()">Reset Filters</button>
+</div>
+
+
+<section id="tables" class="tables-section">
+      <div class="container">
+        <!-- Table -->
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable(0)">S.No.</th>
+              <th onclick="sortTable(1)">Title</th>
+              <th onclick="sortTable(2)">Publication Year</th>
+              <th onclick="sortTable(3)">Research Area</th>
+              <th onclick="sortTable(4)">Disease Focus</th>
+              <th onclick="sortTable(5)">Impact Factor</th>
+              <th onclick="sortTable(6)">Citation Count</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Table content will be populated dynamically using JavaScript -->
+          </tbody>
+        </table>  
+      </div>
+
+      <div class="loading-container">
+    <div class="loading-circle"></div>
+</div>
+      
+    </section>
+
+    <div class="connect-button-container">
+        <a href="index.html" class="connect-button">Back to Home</a>
+    </div>
+
+    <!-- ... Previous HTML Code ... -->
+
+    <!-- JavaScript for Populating and Sorting Table -->
+
+    <script>
+        let originalData;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showLoadingAnimation();
+
+            // Fetch data from the provided API
+            setTimeout(() => {
+                // Fetch data from the local JSON file
+                fetch("biopharma.json")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const subsetData = data.slice(0, 200);
+                        hideLoadingAnimation();
+                        originalData = subsetData; // Store the original data
+                        populateTable(subsetData);
+                    });
+            }, 1500);
+        });
+
+        function applyFilters() {
+            const yearFilter = document.getElementById("yearFilter").value;
+            const diseaseFilter = document.getElementById("diseaseFilter").value;
+            const areaFilter = document.getElementById("areaFilter").value;
+
+            const filteredData = originalData.filter((row) => {
+                return (
+                    (yearFilter === "" || parseInt(row.publication_year) === parseInt(yearFilter)) &&
+                    (diseaseFilter === "" || row.disease_focused === diseaseFilter) &&
+                    (areaFilter === "" || row.research_area === areaFilter)
+                );
+            });
+
+            populateTable(filteredData);
+        }
+
+        function resetFilters() {
+            document.getElementById("yearFilter").value = "";
+            document.getElementById("diseaseFilter").value = "";
+            document.getElementById("areaFilter").value = "";
+
+            populateTable(originalData);
+        }
+
+        function showLoadingAnimation() {
+            const loadingContainer = document.querySelector(".loading-container");
+            loadingContainer.classList.add("visible");
+        }
+
+        function hideLoadingAnimation() {
+            const loadingContainer = document.querySelector(".loading-container");
+            loadingContainer.classList.remove("visible");
+        }
+
+        function populateTable(data) {
+    const table = document.querySelector(".data-table");
+    const tableBody = document.getElementById("table-body");
+
+    // Clear existing table rows
+    tableBody.innerHTML = '';
+
+    // Check if the header already exists
+    const existingHeader = table.querySelector("thead");
+    if (!existingHeader) {
+        // Populate table header if it doesn't exist
+        const headerRow = document.createElement("tr");
+        headerRow.innerHTML = `
+            <th onclick="sortTable(0)">S.No.</th>
+            <th onclick="sortTable(1)">Title</th>
+            <th onclick="sortTable(2)">Publication Year</th>
+            <th onclick="sortTable(3)">Research Area</th>
+            <th onclick="sortTable(4)">Disease Focus</th>
+            <th onclick="sortTable(5)">Impact Factor</th>
+            <th onclick="sortTable(6)">Citation Count</th>
+        `;
+        const thead = document.createElement("thead");
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+    }
+
+    // Populate table rows dynamically
+    data.forEach((row, index) => {
+        const tableRow = document.createElement("tr");
+        tableRow.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${row.title}</td>
+            <td>${row.publication_year}</td>
+            <td>${row.research_area}</td>
+            <td>${row.disease_focused}</td>
+            <td>${row.impact_factor}</td>
+            <td>${row.citation_count}</td>
+        `;
+        tableBody.appendChild(tableRow);
+    });
+}
+
+
+    
+
+    
+function sortTable(columnIndex) {
+  const table = document.querySelector(".data-table");
+  const rows = Array.from(table.getElementsByTagName("tr"));
+
+  // Remove the header row
+  const headerRow = rows.shift();
+
+  // Get the current sorting order of the column
+  const currentOrder = table.getAttribute("data-order") || "asc";
+
+  // Toggle the sorting order
+  const newOrder = currentOrder === "asc" ? "desc" : "asc";
+  table.setAttribute("data-order", newOrder);
+
+  // Change the color of the clicked column header to a darker shade of red
+  headerRow.querySelectorAll("th").forEach((th, index) => {
+    if (index === columnIndex) {
+      th.style.backgroundColor = "#990000"; // Change this color as needed
+    } else {
+      th.style.backgroundColor = "#FF0000"; // Reset other columns to the original color
+    }
+  });
+
+  // Sort rows based on the content of the selected column
+  rows.sort((a, b) => {
+    const aValue = a.cells[columnIndex].textContent.trim();
+    const bValue = b.cells[columnIndex].textContent.trim();
+
+    // Use localeCompare for sorting strings
+    const comparison = aValue.localeCompare(bValue, undefined, {
+      numeric: true,
+      sensitivity: "base",
+    });
+
+    // Multiply by 1 to convert the result to a number (for numeric sorting)
+    return currentOrder === "asc" ? comparison : -comparison;
+  });
+
+  // Insert the sorted rows back into the table
+  rows.unshift(headerRow);
+  table.tBodies[0].innerHTML = "";
+  rows.forEach((row) => table.tBodies[0].appendChild(row));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+body {
+  font-family: "Libre Franklin", sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  color:#eb1700;
+  font-family: "Libre Franklin",sans-serif;
+  
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #666;
+  margin-bottom: 40px;
+}
+
+.chart-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #ff3333;
+}
+
+canvas {
+  margin: 20px auto;
+  display: block;
+}
+
+.chart-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.indicator-item {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.indicator-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.summary-section {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summary-section .container {
+  max-width: 800px;
+  color: #5e5047; /* Set your desired text color */
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  text-align: justify;
+}
+
+.connect-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.connect-button {
+  padding: 10px 15px;
+  background-color: #eb1700;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(16px, 4vw, 20px);
+  font-family: "Libre Franklin", sans-serif;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.connect-button:hover {
+  background-color: #d10f00; /* Darker shade when hovered */
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .connect-button-container {
+    justify-content: center;
+  }
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Add this CSS for loading animation */
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.loading-circle {
+  border: 8px solid #ff3333;
+  border-top: 8px solid #ddd;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.tables-section {
+    background-color: #f2f2f2; /* Set your desired background color */
+    padding: 50px 0; /* Adjust as needed for spacing */
+    text-align: center;
+    
+}
+.tables-section .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.tables-section h2 {
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #333; /* Set your desired text color */
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.data-table {
+    max-width: 1300px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; /* Add this to enable horizontal scrolling */
+    display: block; /* Add this to enable horizontal scrolling on smaller screens */
+}
+@media screen and (max-width: 768px) {
+    .data-table {
+        max-width: 100%;
+    }
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Set your desired border color */
+    text-align: left;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: clamp(12px, 2vw, 16px);
+}
+.data-table th {
+    background-color: #eb1700; /* Set your desired header background color */
+    color: white; /* Set your desired header text color */
+    cursor: pointer;
+}
+
+.data-table th:hover {
+    background-color: #d10f00; /* Darker shade when hovered */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Set your desired even row background color */
+}
+
+
+
+
+/* Add any additional styling for the address and phone number if needed */
+
+
+
+/* ... Previous CSS Code ... */
+
+.tables-section {
+    background-color: #f2f2f2; /* Set your desired background color */
+    padding: 50px 0; /* Adjust as needed for spacing */
+    text-align: center;
+    
+}
+.tables-section .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.tables-section h2 {
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #333; /* Set your desired text color */
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.data-table {
+    max-width: 1300px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto; /* Add this to enable horizontal scrolling */
+    display: block; /* Add this to enable horizontal scrolling on smaller screens */
+}
+@media screen and (max-width: 768px) {
+    .data-table {
+        max-width: 100%;
+    }
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Set your desired border color */
+    text-align: left;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: clamp(12px, 2vw, 16px);
+}
+.data-table th {
+    background-color: #eb1700; /* Set your desired header background color */
+    color: white; /* Set your desired header text color */
+    cursor: pointer;
+}
+
+.data-table th:hover {
+    background-color: #d10f00; /* Darker shade when hovered */
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Set your desired even row background color */
+}
+
+
+.filter-controls {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: clamp(.5rem, 1vw, 1rem);
+    color: #333;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+.filter-controls label,
+.filter-controls select,
+.filter-controls input,
+.filter-controls button {
+    margin: 5px;
+    color: #333;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: clamp(.5rem, 1vw, 1rem);
+}
+
+.filter-controls select,
+.filter-controls input {
+    flex: 1; /* Grow to take available space */
+    max-width: 300px; /* Set a maximum width to prevent them from taking too much space */
+    box-sizing: border-box; /* Include padding and border in the width */
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-controls button {
+    padding: 8px 14px;
+    background-color: #eb1700;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(.7rem, 1vw, 1.2rem);
+    font-family: "Libre Franklin", sans-serif;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-controls button:hover {
+    background-color: #d10f00; /* Darker shade when hovered */
+}
+
+@media screen and (max-width: 768px) {
+    .filter-controls {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: stretch; /* Stretch items to full width on smaller screens */
+    }
+
+    .filter-controls label,
+    .filter-controls select,
+    .filter-controls input,
+    .filter-controls button {
+        width: 100%; /* Take full width on smaller screens */
+        margin-right: 0; /* Remove right margin on smaller screens */
+    }
+}
+
+.filter-controls input::placeholder {
+    color: #ccc; /* Set your desired placeholder text color */
+    font-family: "Libre Franklin", sans-serif;
+    font-size: clamp(.5rem, 1vw, .8rem);
+}

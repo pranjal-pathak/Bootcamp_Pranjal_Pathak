@@ -1,0 +1,142 @@
+body {
+  font-family: "Libre Franklin", sans-serif;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff3333;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #666;
+  margin-bottom: 40px;
+}
+
+.chart-section {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #ff3333;
+}
+
+canvas {
+  margin: 20px auto;
+  display: block;
+}
+
+.chart-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.indicator-item {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.indicator-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.summary-section {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.summary-section .container {
+  max-width: 800px;
+  color: #5e5047; /* Set your desired text color */
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  text-align: justify;
+}
+
+.connect-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.connect-button {
+  padding: 10px 15px;
+  background-color: #eb1700;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(16px, 4vw, 20px);
+  font-family: "Libre Franklin", sans-serif;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.connect-button:hover {
+  background-color: #d10f00; /* Darker shade when hovered */
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .connect-button-container {
+    justify-content: center;
+  }
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Add this CSS for loading animation */
+.loading-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.loading-circle {
+  border: 8px solid #ff3333;
+  border-top: 8px solid #ddd;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

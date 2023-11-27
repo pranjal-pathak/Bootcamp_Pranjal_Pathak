@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribution on the basis of Disease Focused</title>
+    <link rel="stylesheet" href="impact_factor_bar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="title">
+          <h1>Distribution on the basis of Disease Focused</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+    <!-- Loading Animation Container -->
+    <div class="loading-container">
+      <div class="loading-circle"></div>
+    </div>
+
+    <section class="chart-section">
+      <div class="container">
+        <canvas id="impactChart" width="400" height="400"></canvas>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="container">
+        <p>
+          The bar graph represents the average impact factor for each research
+          area. It provides insights into the distribution of impact factors
+          across different research areas.
+        </p>
+      </div>
+      <div class="connect-button-container">
+        <a href="index.html" class="connect-button">Back to Home</a>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Display loading animation
+        showLoadingAnimation();
+
+        setTimeout(() => {
+        // Fetch data from the provided API
+        fetch("biopharma.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Populate and display the bar graph
+            hideLoadingAnimation();
+            populateAndDisplayChart(data);
+          });
+        },1500)
+
+        function showLoadingAnimation() {
+          // Add a class to the loading container to make it visible
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.add("visible");
+        }
+
+        function hideLoadingAnimation() {
+          // Remove the class to hide the loading container
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.remove("visible");
+        }
+
+        function populateAndDisplayChart(data) {
+          const researchAreas = {};
+          const impactSums = {};
+          const impactCounts = {};
+
+          data.forEach((item) => {
+            const researchArea = item.research_area;
+            const impactFactor = parseFloat(item.impact_factor);
+
+            if (!researchAreas[researchArea]) {
+              researchAreas[researchArea] = true;
+              impactSums[researchArea] = impactFactor;
+              impactCounts[researchArea] = 1;
+            } else {
+              impactSums[researchArea] += impactFactor;
+              impactCounts[researchArea]++;
+            }
+          });
+
+          const researchLabels = Object.keys(researchAreas);
+          const averageImpacts = researchLabels.map(
+            (area) => impactSums[area] / impactCounts[area]
+          );
+
+          const chartData = {
+            labels: researchLabels,
+            datasets: [
+              {
+                label: "Average Impact Factor",
+                data: averageImpacts,
+                backgroundColor: [
+                  "#FF3333",
+                  "#FF6666",
+                  "#FF9999",
+                  "#FFCCCC",
+                  "#666666",
+                ],
+              },
+            ],
+          };
+
+          const chartOptions = {
+            responsive: true,
+            scales: {
+              x: {
+                type: "category",
+                labels: researchLabels,
+                title: {
+                  display: true,
+                  text: "Research Areas",
+                },
+              },
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "Average Impact Factor",
+                },
+              },
+            },
+          };
+
+          const ctx = document.getElementById("impactChart").getContext("2d");
+          const myBarChart = new Chart(ctx, {
+            type: "bar",
+            data: chartData,
+            options: chartOptions,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

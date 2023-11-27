@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribution on the basis of Disease Focused</title>
+    <link rel="stylesheet" href="disease_focused_styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="title">
+          <h1>Distribution on the basis of Disease Focused</h1>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+    <!-- Loading Animation Container -->
+    <div class="loading-container">
+      <div class="loading-circle"></div>
+    </div>
+
+    <section class="chart-section">
+      <div class="container">
+        <canvas id="diseaseChart" width="400" height="400"></canvas>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <div class="container">
+        <p>
+          The pie chart visually represents the distribution of data based on
+          disease-focused categories. The majority of the data is concentrated
+          in Category A, indicating a significant focus on this area. Categories
+          B and C also contribute notably, showcasing diversity in the dataset.
+          Conversely, Categories D and E have smaller representations. This
+          distribution offers insights into the varied focus areas within the
+          dataset.
+        </p>
+      </div>
+      <div class="connect-button-container">
+        <a href="index.html" class="connect-button">Back to Home</a>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Display loading animation
+        showLoadingAnimation();
+
+        // Fetch data from the provided API
+        setTimeout(() => {
+        fetch("biopharma.json")
+          .then((response) => response.json())
+          .then((data) => {
+            // Populate and display the pie chart
+            hideLoadingAnimation();
+            populateAndDisplayChart(data);
+          });
+        },1500)
+
+        function showLoadingAnimation() {
+          // Add a class to the loading container to make it visible
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.add("visible");
+        }
+
+        function hideLoadingAnimation() {
+          // Remove the class to hide the loading container
+          const loadingContainer = document.querySelector(".loading-container");
+          loadingContainer.classList.remove("visible");
+        }
+
+        function populateAndDisplayChart(data) {
+          const diseases = {};
+          data.forEach((item) => {
+            const disease = item.disease_focused;
+            diseases[disease] = (diseases[disease] || 0) + 1;
+          });
+
+          const chartData = {
+            labels: Object.keys(diseases),
+            datasets: [
+              {
+                data: Object.values(diseases),
+                backgroundColor: [
+                  "#FF3333",
+                  "#FF6666",
+                  "#FF9999",
+                  "#FFCCCC",
+                  "#666666",
+                ],
+              },
+            ],
+          };
+
+          const chartOptions = {
+            responsive: true,
+            legend: {
+              position: "bottom",
+            },
+          };
+
+          const ctx = document.getElementById("diseaseChart").getContext("2d");
+          const myPieChart = new Chart(ctx, {
+            type: "pie",
+            data: chartData,
+            options: chartOptions,
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
