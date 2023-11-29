@@ -23,13 +23,15 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <script src="script.js"></script>
+
   </head>
   <body>
     <!-- <div class="above-header"></div> -->
 
     <header>
       <div class="container">
-        <div class="title">
+        <div class="title" id="title">
           <h1>Nexus</h1>
         </div>
         <!-- <a href="#" class="nav-toggle" id="navToggle">Hamburger</a> -->
@@ -72,7 +74,7 @@
         <!-- You can add additional elements or CTA buttons here -->
 
         <div class="connect-button-container">
-          <a href="#" class="connect-button">Connect With Us</a>
+          <a href="connect.html" target="_blank" class="connect-button">Connect With Us</a>
         </div>
       </div>
 
@@ -129,7 +131,7 @@
               <div class="card">
                 <a href="research_area_pie.html"
                   ><img
-                    src="card4.png"
+                    src="Card4.png"
                     alt="Card 4"
                 /></a>
                 <div class="card-content">
@@ -209,13 +211,13 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th onclick="sortTable(0)">S.No.</th>
-              <th onclick="sortTable(1)">Title</th>
-              <th onclick="sortTable(2)">Publication Year</th>
-              <th onclick="sortTable(3)">Research Area</th>
-              <th onclick="sortTable(4)">Disease Focus</th>
-              <th onclick="sortTable(5)">Impact Factor</th>
-              <th onclick="sortTable(6)">Citation Count</th>
+              <th onclick="sortTable(0)" title="Click to Sort">S.No.</th>
+              <th onclick="sortTable(1)"title="Click to Sort">Title</th>
+              <th onclick="sortTable(2)"title="Click to Sort">Publication Year</th>
+              <th onclick="sortTable(3)"title="Click to Sort">Research Area</th>
+              <th onclick="sortTable(4)"title="Click to Sort">Disease Focus</th>
+              <th onclick="sortTable(5)"title="Click to Sort">Impact Factor</th>
+              <th onclick="sortTable(6)"title="Click to Sort">Citation Count</th>
             </tr>
           </thead>
           <tbody id="table-body">
@@ -231,13 +233,11 @@
     </section>
 
     <div class="fullTable-button-container">
-        <a href="full_table.html" class="connect-button-fullTable">View more rows</a>
+        <a href="full_table.html"  class="connect-button-fullTable">View more rows</a>
     </div>
 
-    <!-- ... Previous HTML Code ... -->
-
-    <!-- JavaScript for Populating and Sorting Table -->
-    <script>
+  
+    <!-- <script>
 
       let originalData;
 
@@ -255,7 +255,7 @@
                         originalData = subsetData; // Store the original data
                         populateTable(subsetData);
                     });
-            }, 1500);
+            }, 700);
         });
 
         function applyFilters() {
@@ -443,7 +443,7 @@ function sortTable(columnIndex) {
           });
         }
       });
-    </script>
+    </script> -->
 
     <hr>
 
@@ -452,7 +452,7 @@ function sortTable(columnIndex) {
         <!-- First Row -->
         <div class="footer-row1">
             <div class="footer-column1">
-                <a href="index.html"><h3>Nexus</h3></a>
+                <a href="#title"><h3>Nexus</h3></a>
             </div>
             <div class="row2col1">
             <!-- <h4>Let's stay in touch !</h4> -->

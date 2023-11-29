@@ -24,6 +24,7 @@ hr {
 .chart-section {
   margin-top: 20px;
   text-align: center;
+  overflow-x: auto;
 }
 
 h2 {
@@ -72,8 +73,7 @@ canvas {
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin:20px;
 }
 
 .connect-button {
@@ -140,3 +140,19 @@ canvas {
     transform: rotate(360deg);
   }
 }
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav a{
+    text-decoration: none;
+}
+.arrow {
+    font-size: 50px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: #eb1700; /* Set the arrow color */
+
+}
+

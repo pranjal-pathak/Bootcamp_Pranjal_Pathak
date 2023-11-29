@@ -17,13 +17,14 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
     />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header>
       <div class="container">
         <div class="title">
-          <h1>Distribution on the basis of Research Area</h1>
+          <h1>Distribution on the basis of research area</h1>
         </div>
       </div>
     </header>
@@ -48,8 +49,14 @@
           different research areas within the dataset.
         </p>
       </div>
+      <div class="nav">
+    <a href="study_type.html" title="Click for previous"><div class="arrow left-arrow">&lt;</div></a>
       <div class="connect-button-container">
         <a href="index.html" class="connect-button">Back to Home</a>
+      </div>
+    <a href="citation_count_field_bar.html" title="Click for next"><div class="arrow right-arrow">&gt;</div></a>
+
+      
       </div>
     </section>
 
@@ -95,9 +102,9 @@
                 data: Object.values(researchAreas),
                 backgroundColor: [
                   "#FF3333",
-                  "#FF6666",
+                  "#899499",
                   "#FF9999",
-                  "#FFCCCC",
+                  "#848884",
                   "#666666",
                 ],
               },
@@ -120,5 +127,7 @@
         }
       });
     </script>
+
+    
   </body>
 </html>

@@ -32,7 +32,11 @@ hr{
     max-width: 1300px;
     margin: 0 auto;   
 }
-
+.chart-container {
+  width: 100%;
+  overflow-x: scroll;
+  margin-bottom: 20px; /* Add margin to separate the chart from the summary section */
+}
 .title h1 {
     font-family: 'Libre Franklin', sans-serif;
     color: #eb1700;
@@ -608,7 +612,7 @@ padding: 10px 15px;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     font-size: clamp(.5rem, 1vw, 1rem);
     color: #333;
     font-family: "Libre Franklin", sans-serif;
@@ -671,3 +675,29 @@ padding: 10px 15px;
     font-family: "Libre Franklin", sans-serif;
     font-size: clamp(.5rem, 1vw, .8rem);
 }
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+
+[data-tooltip]::before {
+    content: attr(title);
+    position: absolute;
+    background: white;
+    color: #000000;
+    padding: 5px;
+    border-radius: 5px;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+}
+
